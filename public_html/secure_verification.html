@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="navbar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Document Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .input-group input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-verify {
+            background-color: #007bff;
+            color: #ffffff;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="login.html">Sign In</a>
+        <a href="register.html">Register</a>
+        <a href="choose.html">Services</a>
+        <a href="secure_verification.html">Secure Verification</a>
+        <a href="sign_document.html">Sign Document</a>
+        <a href="about.html">About HashHub</a>
+    </div>
+
+    <div class="container">
+        <h1>Secure Document Verification</h1>
+
+        <!-- Document Upload Section -->
+        <form action="process_verification.php" method="post" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="fileToVerify">Upload Document to Verify:</label>
+                <input type="file" id="fileToVerify" name="fileToVerify" accept=".pdf, .doc, .docx" required>
+            </div>
+
+            <!-- Public Key Upload Section -->
+            <div class="input-group">
+                <label for="publicKey">Upload Public Key:</label>
+                <input type="file" id="publicKey" name="publicKey" accept=".pub" required>
+            </div>
+
+            <button type="submit" class="btn btn-verify">Verify Document</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
